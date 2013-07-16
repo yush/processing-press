@@ -38,7 +38,7 @@ class ProcessingFolio {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'processing folio';
+	protected $plugin_slug = 'processing press';
 
 	/**
 	 * Instance of this class.
@@ -193,8 +193,9 @@ class ProcessingFolio {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), $this->version );
-		wp_enqueue_script('processing', plugins_url('js/processing.js', __FILE__), false, '1.4.1');
+		#wp_enqueue_script('jquery', 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js');
+		#wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), $this->version );
+		wp_enqueue_script('processing', 'http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js');
 	}
 
 	public function processing_shortcode( $name, $content="" ) {
